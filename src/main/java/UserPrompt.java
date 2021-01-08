@@ -12,10 +12,11 @@ public class UserPrompt {
         String input = sc.nextLine();
         System.out.println("You entered: " + input);
 
-        if (StringUtils.isNumeric(input))
+        if (StringUtils.isNumeric(input)) {
             System.out.printf("%s is a number\n", input);
-        else
+        } else {
             System.out.printf("%s is not a number\n", input);
+        }
 
         String swapCase = StringUtils.swapCase(input);
         System.out.println("Flip-cased: " + swapCase);
