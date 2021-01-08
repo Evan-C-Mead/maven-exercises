@@ -1,3 +1,5 @@
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.*;
 import static org.apache.commons.lang3.StringUtils.*;
 
@@ -8,9 +10,20 @@ public class UserPrompt {
 
         System.out.println("Type something...anything...");
         String input = sc.nextLine();
+        System.out.println("You entered: " + input);
 
-        System.out.println(isNumeric(input));
-        System.out.println(swapCase(input));
-        System.out.println(reverse(input));
+        if (StringUtils.isNumeric(input))
+            System.out.printf("%s is a number\n", input);
+        else
+            System.out.printf("%s is not a number\n", input);
+
+        String swapCase = StringUtils.swapCase(input);
+        System.out.println("Flip-cased: " + swapCase);
+
+        String reverseString = StringUtils.reverse(input);
+        System.out.println("Reversed: " + reverseString);
+
+        String reversedSwapCase = StringUtils.reverse(swapCase);
+        System.out.println("Reversed and flip-cased: " + reversedSwapCase);
     }
 }
